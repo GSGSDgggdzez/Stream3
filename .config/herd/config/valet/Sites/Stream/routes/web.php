@@ -16,9 +16,14 @@ use App\Http\Controllers\Auth\RegisteredUserController;
 //     ]);
 // });
 
-Route::get('/', function () {
-    return redirect()->route('register');
-}); 
+Route::get('/welcome', function () {
+    return redirect()->route('welcome');
+});
+
+Route::get('/welcome', function () {
+    return Inertia::render('Welcome');
+})->name('welcome');
+
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');

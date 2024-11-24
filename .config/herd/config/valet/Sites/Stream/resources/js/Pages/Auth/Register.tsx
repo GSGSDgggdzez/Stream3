@@ -181,7 +181,7 @@ export default function Register() {
                             <RadioGroupItem value="Male" id="Male" className='text-white border-white' />
                             <InputLabel htmlFor="Male" className='text-white' >Male</InputLabel>
                         </div>
-                        <div className="flex items-center space-x-2">
+                        <div className="flex items-center space-x-2 ">
                             <RadioGroupItem value="Female" id="Female" className='text-white border-white' />
                             <InputLabel htmlFor="Female" className='text-white' >Female</InputLabel>
                         </div>
