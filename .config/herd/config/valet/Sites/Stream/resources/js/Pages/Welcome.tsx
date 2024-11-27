@@ -1,20 +1,36 @@
 import { usePage } from '@inertiajs/react';
-import { PageProps } from '@/types';
+import { Page } from '@inertiajs/core';
 import MainLayout from '@/Layouts/MainLayout';
 import Navbar from '@/Components/Navbar';
-import CTA from '@/Components/CTA';
-import FAQ from '@/Components/FAQ';
 import ScrollContent from '@/Components/ScrollContent';
 import DeviceSection from '@/Components/DeviceSection';
+import Footer from '@/Components/Footer';
+import FAQ from '@/Components/FAQ';
+import CTA from '@/Components/CTA';
 
+// Movie interface
+interface Movie {
+  Small_Thumbnail_Url: string;
+  Title: string;
+}
+
+// Correct type for PageProps
+type PageProps = {
+  auth: {
+    user: any;
+  };
+  moviesByGenre: { [key: string]: Movie[] };
+};
+
+// Define the component
 export default function Welcome() {
-  const { auth } = usePage<PageProps>().props;
+  const { auth, moviesByGenre = {} } = usePage<PageProps>().props;
 
   return (
     <MainLayout>
-      <section className="relative mb-[180px]">
+      <section className="relative mb-[70px] bg-[rgba(1,1,1)]">
         {/* Hero image for large screens */}
-        <img src="/build/iii/hero1.svg" alt="" className="hidden md:block w-full" />
+        <img src="/build/iii/Bro.svg" alt="" className="hidden md:block w-full" />
 
         {/* Hero image for small screens */}
         <img src="/build/iii/Sub.svg" alt="" className="md:hidden w-full" />
@@ -62,65 +78,58 @@ export default function Welcome() {
           </div>
         </div>
       </section>
-      {/* these is the new section of the code  */}
-      <section>
-        <div className="min-h-screen">
-          {/* <ScrollContent /> */}
+
+      {/* Browse by Genre Section */}
+      <section className='bg-[rgba(1,1,1)]'>
+        <div className="">
+          <ScrollContent
+            title="Explore our wide variety of categories"
+            sub_title="Whether you're looking for a comedy to make you laugh, a drama to make you think, or a documentary to learn something new"
+            items={Object.entries(moviesByGenre)}
+            renderItem={([genre, movies]: [string, Movie[]]) => {
+              return (
+                <div className="w-[300px] h-[300px] bg-gray-800 rounded-lg p-4 mx-2">
+                  <h3 className="text-xl text-white mb-2">{genre}</h3>
+                  <div className="grid grid-cols-2 gap-2">
+                    {movies.slice(0, 4).map((movie, idx) => (
+                      <img
+                        key={idx}
+                        src={movie.Small_Thumbnail_Url}
+                        alt={movie.Title}
+                        className="w-full h-[120px] object-cover rounded"
+                      />
+                    ))}
+                  </div>
+                </div>
+              );
+            }}
+          />
         </div>
       </section>
-      {/* these is the new section of the code */}
+
+
+
+      {/* Device Section (uncomment if needed) */}
       <section>
         <div>
-        {/* <DeviceSection/> */}
+          <DeviceSection />
         </div>
       </section>
-      {/* these is the new section of the code */}
+
+      {/* FAQ Section (uncomment if needed) */}
       <section>
         <div>
-        {/* <DeviceSection/> */}
+          <FAQ />
         </div>
       </section>
-      {/* Add FAQ section */}
-      
+      <section>
+        <div>
+          <CTA />
+        </div>
+      </section>
+      <div className='mt-20' >
+        <Footer />
+      </div>
     </MainLayout>
   );
 }
-
-
-
-
-// export default function Welcome() {
-//   // Add your data fetching logic here
-//   const topMovies = [/* your movie data */];
-//   const topViewed = [/* your most viewed data */];
-
-//   return (
-//     <Main>
-//       {/* ... existing hero section ... */}
-      
-//       <section>
-//         <div className="min-h-screen bg-gray-100">
-//           <ScrollContent 
-//             title="Top Movies"
-//             items={topMovies}
-//             renderItem={(movie) => (
-//               <div key={movie.id} className="flex-none w-[200px] h-[300px] bg-gray-800 rounded-lg">
-//                 <img src={movie.poster} alt={movie.title} />
-//               </div>
-//             )}
-//           />
-          
-//           <ScrollContent 
-//             title="Most Viewed"
-//             items={topViewed}
-//             renderItem={(item) => (
-//               <div key={item.id} className="flex-none w-[200px] h-[300px] bg-gray-800 rounded-lg">
-//                 <img src={item.image} alt={item.title} />
-//               </div>
-//             )}
-//           />
-//         </div>
-//       </section>
-//     </Main>
-//   );
-// }

@@ -14,7 +14,7 @@ const DeviceSection = () => {
       },
       {
         name: "Laptops",
-        icon: "iii/phone.svg",
+        icon: "/build/iii/phone.svg",
       },
       {
         name: "Gaming Consoles",

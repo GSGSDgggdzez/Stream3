@@ -22,7 +22,7 @@ class PaymentController extends Controller
         $checkout = $request->user()
             ->newSubscription(env('PRODUCT_ID'), $plans[$plan])
             ->checkout([
-                'success_url' => route('dashboard'),
+                'success_url' => route('welcome'),
                 'cancel_url' => route('payment'),
             ]);
     

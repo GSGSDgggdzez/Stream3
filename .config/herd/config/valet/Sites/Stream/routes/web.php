@@ -3,6 +3,7 @@
 use Inertia\Inertia;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Application;
+use App\Http\Controllers\MovieController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Auth\RegisteredUserController;
@@ -16,8 +17,8 @@ use App\Http\Controllers\Auth\RegisteredUserController;
 //     ]);
 // });
 
-Route::get('/welcome', function () {
-    return redirect()->route('welcome');
+Route::get('/', function () {
+    return redirect()->route('register');
 });
 
 Route::get('/welcome', function () {
@@ -41,6 +42,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/payment', function () {
         return Inertia::render('Auth/Payment');
     })->name('payment');
+    Route::get('/welcome', [MovieController::class, 'getMoviesByGenre'])->name('welcome');
 });
 
 require __DIR__.'/auth.php';

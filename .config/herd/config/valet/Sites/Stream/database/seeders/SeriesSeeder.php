@@ -14,7 +14,7 @@ class SeriesSeeder extends Seeder
             // Breaking Bad
             [
                 'Title' => 'Breaking Bad',
-                'Small_Thumbnail_Url' => 'https://example.com/breaking-bad-small.jpg',
+                'Small_Thumbnail_Url' => 'https://netlaravel1.s3.eu-north-1.amazonaws.com/Movie/thumdnail/adventure/Image+(2).svg',
                 'Big_Thumbnail_Url' => '/Big/big.svg',
                 'Description' => 'A high school chemistry teacher turned methamphetamine manufacturer partners with a former student to secure his family\'s financial future as he battles terminal lung cancer.',
                 'Release_Year' => '2008-01-20',
@@ -28,7 +28,7 @@ class SeriesSeeder extends Seeder
             // Stranger Things
             [
                 'Title' => 'Stranger Things',
-                'Small_Thumbnail_Url' => 'https://example.com/stranger-things-small.jpg',
+                'Small_Thumbnail_Url' => 'https://netlaravel1.s3.eu-north-1.amazonaws.com/Movie/thumdnail/adventure/Image+(2).svg',
                 'Big_Thumbnail_Url' => '/Big/big1.svg',
                 'Description' => 'A group of kids uncover supernatural mysteries and government conspiracies in the small town of Hawkins.',
                 'Release_Year' => '2016-07-15',
@@ -42,7 +42,7 @@ class SeriesSeeder extends Seeder
             // Game of Thrones
             [
                 'Title' => 'Game of Thrones',
-                'Small_Thumbnail_Url' => 'https://example.com/game-of-thrones-small.jpg',
+                'Small_Thumbnail_Url' => 'https://netlaravel1.s3.eu-north-1.amazonaws.com/Movie/thumdnail/adventure/Image+(2).svg',
                 'Big_Thumbnail_Url' => '/Big/big.svg',
                 'Description' => 'Nine noble families fight for control of the Iron Throne in the mythical land of Westeros.',
                 'Release_Year' => '2011-04-17',
@@ -56,7 +56,7 @@ class SeriesSeeder extends Seeder
             // The Witcher
             [
                 'Title' => 'The Witcher',
-                'Small_Thumbnail_Url' => 'https://example.com/the-witcher-small.jpg',
+                'Small_Thumbnail_Url' => 'https://netlaravel1.s3.eu-north-1.amazonaws.com/Movie/thumdnail/adventure/Image+(2).svg',
                 'Big_Thumbnail_Url' => '/Big/big.svg',
                 'Description' => 'A monster hunter struggles to find his place in a world where people often prove more wicked than beasts.',
                 'Release_Year' => '2019-12-20',
@@ -69,7 +69,7 @@ class SeriesSeeder extends Seeder
             ],
             [
                 'Title' => 'The Mandalorian',
-                'Small_Thumbnail_Url' => 'https://example.com/the-mandalorian-small.jpg',
+                'Small_Thumbnail_Url' => 'https://netlaravel1.s3.eu-north-1.amazonaws.com/Movie/thumdnail/adventure/Image+(2).svg',
                 'Big_Thumbnail_Url' => '/Big/big1.svg',
                 'Description' => 'A bounty hunter in the outer reaches of the galaxy is hired to track down a mysterious child.',
                 'Release_Year' => '2019-11-12',
@@ -83,7 +83,7 @@ class SeriesSeeder extends Seeder
             // The Office (US)
             [
                 'Title' => 'The Office (US)',
-                'Small_Thumbnail_Url' => 'https://example.com/the-office-us-small.jpg',
+                'Small_Thumbnail_Url' => 'https://netlaravel1.s3.eu-north-1.amazonaws.com/Movie/thumdnail/adventure/Image+(2).svg',
                 'Big_Thumbnail_Url' => '/Big/big.svg',
                 'Description' => 'A mockumentary sitcom that follows the everyday lives of office employees working at Dunder Mifflin.',
                 'Release_Year' => '2005-03-24',
@@ -97,7 +97,7 @@ class SeriesSeeder extends Seeder
             // Friends
             [
                 'Title' => 'Friends',
-                'Small_Thumbnail_Url' => 'https://example.com/friends-small.jpg',
+                'Small_Thumbnail_Url' => 'https://netlaravel1.s3.eu-north-1.amazonaws.com/Movie/thumdnail/adventure/Image+(2).svg',
                 'Big_Thumbnail_Url' => '/Big/big1.svg',
                 'Description' => 'Follows the lives of six friends in their 20s and 30s who live in Manhattan.',
                 'Release_Year' => '1994-09-22',
@@ -111,7 +111,7 @@ class SeriesSeeder extends Seeder
             // Dark
             [
                 'Title' => 'Dark',
-                'Small_Thumbnail_Url' => 'https://example.com/dark-small.jpg',
+                'Small_Thumbnail_Url' => 'https://netlaravel1.s3.eu-north-1.amazonaws.com/Movie/thumdnail/adventure/Image+(2).svg',
                 'Big_Thumbnail_Url' => '/Big/big.svg',
                 'Description' => 'A German sci-fi thriller that explores time travel and the interconnectedness of four estranged families.',
                 'Release_Year' => '2017-12-01',

@@ -282,7 +282,7 @@ class MovieSeeder extends Seeder
             // Sci-Fi Genre (4 movies)
             [
                 'Title' => 'Interstellar',
-                'Small_Thumbnail_Url' => 'https://netlaravel1.s3.eu-north-1.amazonaws.com/Movie/thumdnail/SciFi/Image+(1).svg',
+                'Small_Thumbnail_Url' => 'https://netlaravel1.s3.eu-north-1.amazonaws.com/Movie/thumdnail/adventure/Image+(2).svg',
                 'Big_Thumbnail_Url' => '/Big/big.svg',
                 'Description' => 'A group of explorers journey through a wormhole in space to ensure humanity\'s survival.',
                 'Release_Year' => '2014-11-07',
