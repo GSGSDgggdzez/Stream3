@@ -2,34 +2,34 @@ const DeviceSection = () => {
     const devices = [
       {
         name: "Smartphones",
-        icon: "iii/phone.svg",
-      },
-      {
-        name: "Tablet",
-        icon: "iii/tablet.svg",
-      },
-      {
-        name: "Smart TV",
-        icon: "iii/tv.svg", 
-      },
-      {
-        name: "Laptops",
         icon: "/build/iii/phone.svg",
       },
       {
+        name: "Tablet",
+        icon: "/build/iii/tablet.svg",
+      },
+      {
+        name: "Smart TV",
+        icon: "/build/iii/tv.svg", 
+      },
+      {
+        name: "Laptops",
+        icon: "/build/iii/laptop.svg",
+      },
+      {
         name: "Gaming Consoles",
-        icon: "iii/phone.svg",
+        icon: "/build/iii/game.svg",
       },
       {
         name: "VR Headsets",
-        icon: "iii/phone.svg",
+        icon: "/build/iii/vr.svg",
       }
     ];
   
     return (
       <section className="mx-8 my-12">
         <div>
-          <div className="text-white font-bold text-2xl">
+          <div className="text-white font-bold text-3xl">
             We Provide you streaming experience across various devices.
           </div>
           
@@ -48,7 +48,7 @@ const DeviceSection = () => {
           <div className="grid lg:grid-cols-3 mt-5 gap-5">
             {devices.map((device, index) => (
               <div key={index} className="p-3 rounded-md" id="bgs">
-                <div className="flex gap-7">
+                <div className="flex gap-3 items-center">
                   <img src={device.icon} alt={device.name} />
                   <div className="font-bold text-white text-xl">
                     {device.name}

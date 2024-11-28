@@ -1,9 +1,5 @@
 import { useState } from 'react';
 
-{/* ------------------------------------------------------------------- */}
-                  {/* ---------------------------TODO Add the link to the support page---------------------------- */}
-                  {/* ------------------------------------------------------------------- */}
-
 const FAQ = () => {
     const faqs = [
         { id: '01', question: 'What is StreamVibe?', answer: 'StreamVibe is a streaming service that allows you to watch movies and shows on demand.' },
@@ -12,7 +8,6 @@ const FAQ = () => {
         { id: '04', question: 'How can I watch StreamVibe?', answer: 'StreamVibe is a streaming service that allows you to watch movies and shows on demand.' },
         { id: '05', question: 'How do I sign up for StreamVibe?', answer: 'StreamVibe is a streaming service that allows you to watch movies and shows on demand.' },
         { id: '06', question: 'What is the StreamVibe free trial?', answer: 'StreamVibe is a streaming service that allows you to watch movies and shows on demand.' },
-        // Add more FAQs as needed
     ];
 
     return (
@@ -48,33 +43,40 @@ const FAQItem = ({ id, question, answer }: { id: string, question: string, answe
         <div className="border-b-2 border-[#E50000] pb-3">
             <div className="flex gap-4 justify-between">
                 <div className="flex gap-4">
-                    <div className="bg-[#262626] rounded-md p-4 text-white  justify-items-center">
+                    <div className="bg-[#262626] rounded-md p-4 text-white justify-items-center">
                         {id}
                     </div>
                     <div className="text-white text-lg mt-3">
                         {question}
                     </div>
                 </div>
-                <button 
+                <button
                     className="text-white justify-items-end"
                     onClick={() => setIsOpen(!isOpen)}
+                    aria-expanded={isOpen}
+                    aria-controls={`faq-answer-${id}`}
                 >
                     {isOpen ? (
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
                             <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14" />
                         </svg>
                     ) : (
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
                             <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
                         </svg>
                     )}
                 </button>
             </div>
-            {isOpen && (
-                <div className="text-white text-sm mt-3">
-                    {answer}
-                </div>
-            )}
+            <div
+                id={`faq-answer-${id}`}
+                className={`transition-all duration-300 ease-in-out ${isOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0 overflow-hidden'}`}
+            >
+                {isOpen && (
+                    <div className="text-white text-sm mt-3">
+                        {answer}
+                    </div>
+                )}
+            </div>
         </div>
     );
 };

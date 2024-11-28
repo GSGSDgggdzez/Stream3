@@ -6,3 +6,18 @@
     --radius: 0.5rem
   }
 }
+
+/* Hide horizontal scrollbar */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none; /* Hide scrollbar in webkit browsers */
+}
+
+/* For Firefox */
+.hide-scrollbar {
+  scrollbar-width: none; /* Hide scrollbar in Firefox */
+}
+
+#bgs{
+  background: rgb(20,20,20);
+background: linear-gradient(14deg, rgba(20,20,20,1) 59%, rgba(15,15,15,1) 79%, rgba(229,0,0,0.6943569664193803) 100%);
+}

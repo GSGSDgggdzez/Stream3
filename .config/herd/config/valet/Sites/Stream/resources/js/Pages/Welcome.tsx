@@ -68,19 +68,21 @@ export default function Welcome() {
 
             {/* CTA Button */}
             <button className="my-3 text-white bg-[#E50000] p-4 rounded-md transition duration-150 ease-in-out">
-              <div className="flex">
+             <a href="/movies_show">
+             <div className="flex">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z" />
                 </svg>
                 Start Watching Now
               </div>
+             </a>
             </button>
           </div>
         </div>
       </section>
 
       {/* Browse by Genre Section */}
-      <section className='bg-[rgba(1,1,1)]'>
+      <section className="bg-[rgba(1,1,1)] mt-[150px] lg:mx-8">
         <div className="">
           <ScrollContent
             title="Explore our wide variety of categories"
@@ -88,17 +90,24 @@ export default function Welcome() {
             items={Object.entries(moviesByGenre)}
             renderItem={([genre, movies]: [string, Movie[]]) => {
               return (
-                <div className="w-[300px] h-[300px] bg-gray-800 rounded-lg p-4 mx-2">
-                  <h3 className="text-xl text-white mb-2">{genre}</h3>
+                <div className="w-[250px] h-[300px] bg-[#1A1A1A] rounded-lg p-4 mx-2">
                   <div className="grid grid-cols-2 gap-2">
                     {movies.slice(0, 4).map((movie, idx) => (
                       <img
                         key={idx}
                         src={movie.Small_Thumbnail_Url}
                         alt={movie.Title}
-                        className="w-full h-[120px] object-cover rounded"
+                        className="w-full h-[110px] object-cover rounded transition-all duration-300 hover:scale-105 hover:brightness-75 hover:shadow-lg cursor-pointer"
                       />
                     ))}
+                  </div>
+                  <div className="flex justify-between text-white mt-3 mx-3">
+                    <div>{genre}</div>
+                    <div>
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                      </svg>
+                    </div>
                   </div>
                 </div>
               );
@@ -107,22 +116,20 @@ export default function Welcome() {
         </div>
       </section>
 
-
-
       {/* Device Section (uncomment if needed) */}
-      <section>
+      <section className='bg-[rgba(1,1,1)] mt-[50px] lg:mx-8'>
         <div>
           <DeviceSection />
         </div>
       </section>
 
       {/* FAQ Section (uncomment if needed) */}
-      <section>
+      <section className='bg-[rgba(1,1,1)] mt-[50px] lg:mx-8'>
         <div>
           <FAQ />
         </div>
       </section>
-      <section>
+      <section className='bg-[rgba(1,1,1)] mt-[100px] lg:mx-8 mx-[200px] '>
         <div>
           <CTA />
         </div>

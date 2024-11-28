@@ -26,6 +26,10 @@ Route::get('/welcome', function () {
 })->name('welcome');
 
 
+Route::get('/movies_show', function () {
+    return Inertia::render('movies_show');
+})->name('movies_show');
+
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
@@ -43,6 +47,8 @@ Route::middleware('auth')->group(function () {
         return Inertia::render('Auth/Payment');
     })->name('payment');
     Route::get('/welcome', [MovieController::class, 'getMoviesByGenre'])->name('welcome');
+    Route::get('/movies_show', [MovieController::class, 'Random'])->name('movies_show');
+
 });
 
 require __DIR__.'/auth.php';

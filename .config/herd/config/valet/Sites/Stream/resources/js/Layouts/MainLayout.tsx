@@ -20,7 +20,7 @@ export default function Guest({ children }: PropsWithChildren) {
   }, [isOpen]);
 
   return (
-    <div className='bg-[rgba(1,1,1)]'>
+    <div className='bg-[#1E1E1E]'>
       <div className="min-h-screen">
         <main className="container mx-auto">{children}</main>
       </div>

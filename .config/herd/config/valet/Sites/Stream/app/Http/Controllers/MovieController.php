@@ -22,4 +22,16 @@ class MovieController extends Controller
     ]);
 }
 
+public function Random() {
+    $randomContent = DB::table('Movies')
+        ->select('Title', 'Description', 'Big_Thumbnail_Url')
+        ->inRandomOrder()
+        ->first();
+
+    return Inertia::render('movies_show', [
+        'randomContent' => $randomContent
+    ]);
+}
+
+
 }
